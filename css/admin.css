@@ -1,0 +1,231 @@
+/* ===============================
+   Admin Dashboard - Modern Theme
+   =============================== */
+
+/* ----- Base Colors ----- */
+:root {
+  --bg: #f5f8fb;
+  --surface: #ffffff;
+  --surface-2: #f0f4f8;
+  --muted: #486581;
+  --text: #14323a;
+  --text-soft: #254f5e;
+  --border: #d9e2ec;
+  --border-strong: #bcccdc;
+
+  --primary: #2d7ff9;
+  --primary-600: #1b64d8;
+  --primary-soft: rgba(45,127,249,0.12);
+  --accent-start: #4facfe;
+  --accent-end: #00f2fe;
+
+  --success: #2f855a;
+  --danger: #d64545;
+  --warning: #f0b429;
+  --info: #127fbf;
+  --focus: #884dff;
+}
+
+/* ----- Reset & Base Layout ----- */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+h2.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Notice / Messages ----- */
+.notice-box {
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.notice-item {
+  color: var(--text-soft);
+  font-weight: 500;
+}
+
+/* ----- Stats Section ----- */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.25s ease;
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.stat-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat.add {
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat.add:hover {
+  filter: brightness(1.1);
+}
+
+.add-user-link {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* ----- Table Section ----- */
+.table-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.table-head strong {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.search-input {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--surface);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(136,77,255,0.2);
+  outline: none;
+}
+
+/* ----- Table ----- */
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.simple-table th,
+.simple-table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.simple-table th {
+  background: var(--surface-2);
+  font-weight: 600;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.simple-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.simple-table tbody tr:hover {
+  background: var(--primary-soft);
+}
+
+/* ----- Actions ----- */
+.action {
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.action.edit {
+  color: var(--primary);
+  background: rgba(45,127,249,0.08);
+}
+
+.action.edit:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.action.delete {
+  color: var(--danger);
+  background: rgba(214,69,69,0.08);
+  margin-left: 0.3rem;
+}
+
+.action.delete:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  .simple-table th, .simple-table td {
+    padding: 0.7rem 0.8rem;
+  }
+  .table-head {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}

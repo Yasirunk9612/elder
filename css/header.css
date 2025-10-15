@@ -1,0 +1,66 @@
+/* Header styles (shared across pages) */
+
+:root {
+	--header-height: 72px;
+	/* fallback; footer.css sets the final value */
+	--footer-height: 64px;
+}
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	backdrop-filter: saturate(180%) blur(10px);
+	background: linear-gradient(90deg, #ffffff 0%, #f7f9fc 100%);
+	border-bottom: 1px solid #e6edf5;
+	width: 100%;
+}
+
+.nav-inner {
+	max-width: 1280px;
+	height: var(--header-height);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0 18px;
+}
+
+.brand {
+	font-weight: 700;
+	font-size: 1.25rem;
+	letter-spacing: .3px;
+	background: linear-gradient(90deg,#4facfe,#00f2fe);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.nav-spacer { flex: 1; }
+
+.nav-links { list-style: none; display: flex; gap: .75rem; margin: 0; padding: 0; }
+.nav-links li { display: inline-flex; }
+.nav-links a {
+	display: inline-block;
+	padding: .55rem .8rem;
+	border-radius: 10px;
+	color: #223a59;
+	font-weight: 600;
+}
+.nav-links a:hover { background: #eef4ff; color: #1b64d8; }
+.nav-links a.danger { background: #d64545; color: #fff; }
+.nav-links a.danger:hover { background: #b21d1d; }
+
+@media (max-width: 700px) {
+	.nav-links { flex-wrap: wrap; gap: .5rem; }
+}
+
+/* Ensure page content isn’t covered by fixed header/footer */
+.main { 
+	padding-top: var(--header-height);
+	padding-bottom: var(--footer-height);
+	min-height: 100vh;
+}
+
