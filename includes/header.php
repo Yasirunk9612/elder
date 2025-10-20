@@ -10,8 +10,8 @@ if (session_status() === PHP_SESSION_NONE) { session_start(); }
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/head.css" />
+    <link rel="stylesheet" href="css/foot.css" />
     <?php if (isset($extraCss) && is_array($extraCss)): foreach ($extraCss as $cssHref): ?>
         <link rel="stylesheet" href="<?= htmlspecialchars($cssHref) ?>" />
     <?php endforeach; endif; ?>

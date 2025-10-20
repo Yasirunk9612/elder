@@ -1,0 +1,60 @@
+/* ============================================================
+   Modern Footer
+   ============================================================ */
+
+.site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* match admin dashboard gradient for footer */
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77) !important;
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+    color: #d9e9ff;
+    font-size: 0.95rem;
+    padding: 0 16px;
+    box-shadow: 0 -6px 25px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.site-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.site-footer a {
+    color: #7cc2ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.site-footer a:hover {
+    color: #00f2fe;
+}
+
+/* Footer hover glow effect */
+.site-footer:hover {
+    box-shadow: 0 -6px 25px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .site-footer {
+        font-size: 0.9rem;
+        padding: 0 12px;
+        flex-direction: column;
+        gap: 4px;
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

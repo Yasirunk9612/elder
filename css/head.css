@@ -1,0 +1,118 @@
+/* ============================================================
+   Modern Admin Header — Dark Glass Theme
+   ============================================================ */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    /* match admin dashboard gradient for a seamless look */
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+    color: #f0f4f8;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.nav-inner {
+    max-width: 1280px;
+    height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 24px;
+}
+
+.brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 0.3px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform 0.25s ease;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-spacer {
+    flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-flex;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 0.55rem 0.9rem;
+    border-radius: 12px;
+    color: #d9e9ff; /* slightly brighter for contrast on gradient */
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0%;
+    height: 2px;
+    background: #00f5d4;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.nav-links a:hover::after {
+    width: 60%;
+}
+
+.nav-links a:hover {
+    background: rgba(0,245,212,0.1);
+    color: #00f5d4;
+    box-shadow: 0 4px 12px rgba(0,245,212,0.2);
+}
+
+.nav-links a.danger {
+    background: #ef233c;
+    color: #fff;
+}
+
+.nav-links a.danger:hover {
+    background: #b21d1d;
+    box-shadow: 0 4px 12px rgba(214,69,69,0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-end;
+    }
+    .nav-inner {
+        padding: 0 16px;
+    }
+    .brand {
+        font-size: 1.25rem;
+    }
+}

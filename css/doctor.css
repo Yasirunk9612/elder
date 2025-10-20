@@ -1,0 +1,305 @@
+/* ============================================================
+   Doctor Dashboard - Modern Glass Theme
+   ============================================================ */
+
+/* ----- Base ----- */
+body {
+  font-family: "Poppins", "Inter", sans-serif;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+  color: #f0f4f8;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ----- Titles & Headings ----- */
+h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #e0eafc;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  color: #e0eafc;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ----- Container & Grid ----- */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+}
+
+.grid-gap {
+  gap: 2rem;
+}
+
+/* ----- Card ----- */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* ----- Form Styling ----- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #9ecfff;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f0f4f8;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #00f5d4;
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.2);
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #00f5d4, #00d4ff);
+  color: #0d1b2a;
+}
+
+.btn-success:hover {
+  filter: brightness(1.15);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #00f5d4;
+  border: 1px solid #00f5d4;
+}
+
+.btn-outline:hover {
+  background: #00f5d4;
+  color: #0d1b2a;
+}
+
+.btn-danger {
+  background: rgba(239, 35, 60, 0.1);
+  color: #ef233c;
+}
+
+.btn-danger:hover {
+  background: #ef233c;
+  color: #fff;
+}
+
+.btn-small {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ----- Search Bar ----- */
+.table-search input {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.table-search input:focus {
+  border-color: #00f5d4;
+  box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.2);
+}
+
+/* ----- Table ----- */
+.table-wrapper {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+#records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+#records-table th,
+#records-table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#records-table th {
+  background: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  color: #9ecfff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+#records-table tbody tr {
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+#records-table tbody tr:hover {
+  background: rgba(0, 245, 212, 0.1);
+  transform: scale(1.01);
+}
+
+/* ----- Modal ----- */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ----- Utility ----- */
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-sm {
+  gap: 0.5rem;
+}
+
+.gap-md {
+  gap: 1rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/* ----- Animations & Transitions ----- */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  #records-table th,
+  #records-table td {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

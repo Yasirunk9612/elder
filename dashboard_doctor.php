@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['action'])) {
 
 <?php 
 $pageTitle = 'Doctor Dashboard | Elder Care';
-$extraCss = ['css/dashboard_doctor.css']; 
+$extraCss = ['css/doctor.css']; 
 include 'includes/header.php'; 
 ?>
 

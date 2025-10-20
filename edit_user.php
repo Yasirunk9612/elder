@@ -2,8 +2,10 @@
 include("includes/db.php");
 include("includes/auth.php");
 if ($_SESSION['role'] != 'admin') { header("Location: login.php"); exit(); }
+
 $id = (int)$_GET['id'];
 $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id=$id"));
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name  = $_POST['name'];
     $email = $_POST['email'];
@@ -12,11 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: dashboard_admin.php"); exit();
 }
 ?>
-<?php $pageTitle = 'Edit User | Elder Care'; $extraCss=['css/edit.css']; include 'includes/header.php'; ?>
-<div class="container">
-    <div class="card fade-in">
-        <h2 class="mt-0" style="text-align:left;">Edit User</h2>
-        <form method="POST" novalidate>
+
+<?php 
+$pageTitle = 'Edit User | Elder Care'; 
+$extraCss = ['css/edit.css']; 
+include 'includes/header.php'; 
+?>
+
+<div class="edit-user-container">
+    <div class="edit-user-card fade-in">
+        <h2>Edit User</h2>
+        <form method="POST" class="edit-user-form" novalidate>
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" name="name" id="name" value="<?= htmlspecialchars($user['name']) ?>" required />
@@ -33,7 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="elderly" <?= $user['role']=='elderly'?'selected':'' ?>>Elderly</option>
                 </select>
             </div>
-            <button type="submit" class="btn" style="width:100%;">Update User</button>
+            <button type="submit" class="btn">Update User</button>
         </form>
     </div>
+</div>
+
 <?php include 'includes/footer.php'; ?>
